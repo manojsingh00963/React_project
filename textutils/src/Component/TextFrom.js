@@ -49,9 +49,9 @@ export default function TextFrom(props) {
                 backgroundColor: 'lightblue'
             })
             // if (newText.endsWith('.')) { //note: add logic and correct it
-            
+
             // let newText = text.charAt(1).toUpperCase() + text.substring(1).toLowerCase();
-            
+
 
         }
     }
@@ -66,22 +66,20 @@ export default function TextFrom(props) {
     }
     return (
         <>
+        <div style={{backgroundColor: props.mode === 'dark' ? 'grey' : 'white' , Color: props.mode ==='dark'?'white':'black' }} >
 
-            <div style={{backgroundColor: props.mode === 'light'?'dark':'light', color: props.mode ==='black'?'white':'black'}} >
-
-
-            <div className='containerv ' >
+            <div className='container'  style={{ color: props.mode ==='dark'?'white':'black'}} >
                 <h1 >{props.heading}-</h1>
                 <div className=" mb-1 ">
                     <textarea
                         className="form-control"
-                        style={{backgroundColor: props.mode === 'light'?'grey':'white'}}
                         id="Textarea-control"
                         value={text}
                         onChange={handleonClicked}
-                        rows={3}
+                        rows={5}
                         defaultValue={""}
-                         />
+                        style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white' , Color: props.mode ==='dark'?'white':'black' }}
+                    />
                 </div>
                 <button
                     className="btn btn-primary mx-2"
@@ -121,24 +119,24 @@ export default function TextFrom(props) {
             </div>
 
 
-            <div className="container my-3 " style={{backgroundColor: props.mode === 'dark'?'light':'dark',color: props.mode ==='black'?'white':'black'}}>
+            <div className="container my-3 "  style={{ color: props.mode ==='dark'?'white':'black'}} >
                 <h1>Your text summary</h1>
                 <p>{text.split(" ").length} words, {text.length} characters</p>
                 <p>{Math.ceil(0.008 * text.split(" ").length)} Minutes read.</p>
                 <h2>Preview</h2>
-                <p>{text.lenght>0?text:"Enter something in the textbox above to preview it here"}</p>
+                <p>{text.length > 0 ? text : "Enter something in the textbox above to preview it here"}</p>
 
                 <figure className="border border-secondary my-3">
                     <figcaption className="blockquote-footer mt-0">
                         This is  <cite title="Source Title">Only for read.</cite>
                     </figcaption>
-                    <blockquote  className="blockquote">
-                        <p style={{backgroundColor: props.mode === 'dark'?'light':'dark',color: props.mode ==='black'?'white':'black'}}>{text}</p>
+                    <blockquote className="blockquote">
+                        <p style={{ backgroundColor: props.mode === 'dark' ? 'light' : 'dark', color: props.mode === 'dark' ? 'white' : 'black' }}>{text}</p>
                     </blockquote>
                 </figure>
 
             </div>
-            </div>
+        </div>
         </>
     )
 }
