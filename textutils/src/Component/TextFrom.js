@@ -72,9 +72,16 @@ export default function TextFrom(props) {
     }
     return (
         <>
-        <div className='p-4' style={{backgroundColor: props.mode === 'dark' ? 'grey' : 'white' , color: props.mode ==='dark'?'white':'black' }} >
+        <div className='p-4' 
+        style={{backgroundColor: props.mode === 'dark' ? 'grey' : 'light' ,
+         color: props.mode ==='dark'?'white':'black' }}
+          >
 
-            <div className='container '  style={{ color: props.mode ==='dark'?'white':'black'}} >
+            <div className='container '
+
+            style={{ color: props.mode ==='dark'?'white':'black'}}
+
+             >
                 <h1 >{props.heading}-</h1>
                 <div className=" mb-1 ">
                     <textarea
@@ -126,19 +133,21 @@ export default function TextFrom(props) {
             </div>
 
 
-            <div className="container my-3 " style={{ backgroundColor:props.mode === 'dark'?'dark':'white', color: props.mode ==='dark'?'white':'black'}} >
+            <div className="container my-3 " 
+            style={{ backgroundColor:props.mode === 'dark'?'dark':'white', 
+            color: props.mode ==='dark'?'white':'black'}} 
+            >
                 <h1>Your text summary</h1>
                 <p>{text.split(" ").length} words, {text.length} characters</p>
                 <p>{Math.ceil(0.008 * text.split(" ").length)} Minutes read.</p>
                 <h2>Preview</h2>
-                <p>{text.length > 0 ? text : "Enter something in the textbox above to preview it here"}</p>
 
                 <figure  className="border border-secondary my-3">
                     <figcaption className="blockquote-footer mt-0">
                         This is  <cite title="Source Title">Only for read.</cite>
                     </figcaption>
                     <blockquote className="blockquote">
-                        <p style={{ backgroundColor: props.mode === 'dark' ? 'light' : 'dark', color: props.mode === 'dark' ? 'white' : 'black' }}>{text}</p>
+                <p className=' p-2 ' style={{ backgroundColor: props.mode === 'dark' ? 'light' : 'dark', color: props.mode === 'dark' ? 'white' : 'black' }} >{text.length > 0 ? text : "Enter something in the textbox above to preview it here"}</p>
                     </blockquote>
                 </figure>
 
