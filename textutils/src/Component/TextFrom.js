@@ -14,24 +14,28 @@ export default function TextFrom(props) {
         backgroundColor: 'white'
     })
 
-    const handleonClicked = (event) => {
+    const handleonChange = (event) => {
         setText(event.target.value)
     }
     const handleUpClicked = () => {
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("Successfylly converted to Upper-case!","success") // Alert.....
     }
     const handlelowClicked = () => {
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlert("Successfylly converted to Lower-case!","success") // Alert.....
     }
     const handleClear = () => {
         let newText = "";
         setText(newText);
+        props.showAlert("Text successfully cleared!","danger") // Alert.....
     }
     const SentenceCase = () => {
         let newText = text.charAt(0).toUpperCase() + text.substring(1).toLowerCase();
         setText(newText);
+        props.showAlert("Text successfully converted into sentence case!","info") // Alert.....
     }
     const highlightText = () => {
         if (color.backgroundColor === 'lightblue') {
@@ -49,9 +53,9 @@ export default function TextFrom(props) {
                 backgroundColor: 'lightblue'
             })
             // if (newText.endsWith('.')) { //note: add logic and correct it
-
+            
             // let newText = text.charAt(1).toUpperCase() + text.substring(1).toLowerCase();
-
+            
 
         }
     }
@@ -59,26 +63,29 @@ export default function TextFrom(props) {
         let text = document.getElementById('Textarea-control')
         text.select();
         navigator.clipboard.writeText(text.value);
+        props.showAlert("Copy To Clipboard!","info") // Alert.....
     }
     const handleExtraSpaces = () => {
         let newText = text.split(/[ ]+/)
         setText(newText.join(' '))
+        props.showAlert("Space removed.","success") // Alert.....
     }
     return (
         <>
-        <div style={{backgroundColor: props.mode === 'dark' ? 'grey' : 'white' , Color: props.mode ==='dark'?'white':'black' }} >
+        <div className='p-4' style={{backgroundColor: props.mode === 'dark' ? 'grey' : 'white' , color: props.mode ==='dark'?'white':'black' }} >
 
-            <div className='container'  style={{ color: props.mode ==='dark'?'white':'black'}} >
+            <div className='container '  style={{ color: props.mode ==='dark'?'white':'black'}} >
                 <h1 >{props.heading}-</h1>
                 <div className=" mb-1 ">
                     <textarea
+                    
                         className="form-control"
                         id="Textarea-control"
                         value={text}
-                        onChange={handleonClicked}
+                        onChange={handleonChange}
                         rows={5}
                         defaultValue={""}
-                        style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white' , Color: props.mode ==='dark'?'white':'black' }}
+                        style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white' , color: props.mode ==='dark'?'white':'black' }}
                     />
                 </div>
                 <button
@@ -119,14 +126,14 @@ export default function TextFrom(props) {
             </div>
 
 
-            <div className="container my-3 "  style={{ color: props.mode ==='dark'?'white':'black'}} >
+            <div className="container my-3 " style={{ backgroundColor:props.mode === 'dark'?'dark':'white', color: props.mode ==='dark'?'white':'black'}} >
                 <h1>Your text summary</h1>
                 <p>{text.split(" ").length} words, {text.length} characters</p>
                 <p>{Math.ceil(0.008 * text.split(" ").length)} Minutes read.</p>
                 <h2>Preview</h2>
                 <p>{text.length > 0 ? text : "Enter something in the textbox above to preview it here"}</p>
 
-                <figure className="border border-secondary my-3">
+                <figure  className="border border-secondary my-3">
                     <figcaption className="blockquote-footer mt-0">
                         This is  <cite title="Source Title">Only for read.</cite>
                     </figcaption>
