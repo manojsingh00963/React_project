@@ -4,7 +4,6 @@ import About from './Component/About';
 import Navbar from './Component/Navbar';
 import TextFrom from './Component/TextFrom';
 import Alert from './Component/Alert';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
 
@@ -57,16 +56,11 @@ function App() {
   return (
     <>
         {/* <Navbar title="TextUtils" aboutText='About Us' mode={mode} toggleText={toggleText} */}
-<BrowserRouter>
         <Navbar title="TextUtils" aboutText='About Us' mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className="container my-3">
-          <Routes>
-            <Route path='/' element={<TextFrom showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />} />
-            <Route path='/about' element={<About />} />
-          </Routes>
+           <TextFrom showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />
         </div>
-      </BrowserRouter>
 
     </>
 
