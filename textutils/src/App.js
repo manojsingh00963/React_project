@@ -40,12 +40,11 @@ function App() {
         <Alert alert={alert} />
         <div className="container my-3">
           <Routes>
-            <Route path='/' element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />} />
-            <Route path='/about' element={<About />} />
+            <Route path='/' element={<TextForm showAlert={showAlert} heading=" Try TextUtils - word counter, Character Counter," mode={mode} />} />
+            <Route path='/about' element={<About mode={mode} />} />
           </Routes>
         </div>
       </BrowserRouter>
-
     </>
   );
 }

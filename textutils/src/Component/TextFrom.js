@@ -35,6 +35,7 @@ export default function TextForm(props) {
         // Use ref to access the textarea element
         textareaRef.current.select();
         navigator.clipboard.writeText(textareaRef.current.value);
+        document.getSelection().removeAllRanges();
         props.showAlert('Copied to Clipboard!', 'info'); // Alert.....
     };
 
@@ -46,53 +47,56 @@ export default function TextForm(props) {
 
     return (
         <>
-            <div className='p-4'
-                style={{
+            <div  style={{
                     backgroundColor: props.mode === 'dark' ? 'dark' : 'light',
                     color: props.mode === 'dark' ? 'white' : 'black'
                 }}
             >
-                <div className="container" style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}>
-                    <h1>{props.heading} - </h1>
+            
+            <div className="container" style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}>
+                    <h1 className='mb'>{props.heading}</h1>
+                    <hr />
                     <div className="mb-3">
                         <textarea
                             className="form-control"
                             value={text}
                             onChange={handleOnChange}
-                            style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}
+                            style={{ backgroundColor: props.mode === 'dark' ? '#13466e' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }}
                             id="myBox"
-                            rows={8}
+                            rows={4}
                             ref={textareaRef} // Attach ref to the textarea
                         ></textarea>
                     </div>
 
-                    <button className="btn btn-primary mx-2" onClick={handleUpClicked}>
+                    <button disabled={text.length === 0} className="btn btn-info " onClick={handleUpClicked}>
                         Convert to Uppercase
                     </button>
-                    <button className="btn btn-primary mx-2 my-2" onClick={handleLowClicked}>
+                    <button disabled={text.length === 0} className="btn btn-info mx-2 my-1" onClick={handleLowClicked}>
                         Convert to Lowercase
                     </button>
-                    <button className="btn btn-primary mx-2 my-2" onClick={handleClear}>
+                    <button disabled={text.length === 0} className="btn btn-info mx-1 my-1" onClick={handleClear}>
                         Clear text
                     </button>
-                    <button className="btn btn-primary mx-2 my-2" onClick={handleSentenceCase}>
+                    <button disabled={text.length === 0} className="btn btn-info mx-1 my-1" onClick={handleSentenceCase}>
                         Sentence Case
                     </button>
-                    <button className="btn btn-primary mx-2 my-2" onClick={handleCopyText}>
+                    <button disabled={text.length === 0} className="btn btn-info mx-1 my-1" onClick={handleCopyText}>
                         Copy text
                     </button>
-                    <button className="btn btn-primary mx-2 my-2" onClick={handleExtraSpaces}>
+                    <button disabled={text.length === 0} className="btn btn-info mx-1 my-1" onClick={handleExtraSpaces}>
                         Remove extra spaces
                     </button>
                 </div>
 
                 <div className="container my-3" style={{ backgroundColor: props.mode === 'dark' ? 'dark' : 'light', color: props.mode === 'dark' ? 'white' : 'black' }}>
-                    <h1>Your text summary</h1>
-                    <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words, {text.length} characters</p>
-                    <p>{Math.ceil(0.008 * text.split(' ').length)} Minutes read.</p>
+                    <hr />
+                    <h2>Your text summary</h2>
+                    <hr /> 
+                    <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words, {text.length} characters</p>
+                    <p>{0.008 * text.split(' ').filter((element)=>{return element.length!==0}).length} Minutes read.</p>
                     <h2>Preview</h2>
 
-                    <figure className="border border-secondary my-3">
+                    <figure className="border border-secondary my-3 ">
                         <figcaption className="blockquote-footer mt-0">
                             This is <cite title="Source Title">Only for read.</cite>
                         </figcaption>
@@ -101,7 +105,7 @@ export default function TextForm(props) {
                                 className="p-2"
                                 style={{ backgroundColor: props.mode === 'dark' ? 'light' : 'dark', color: props.mode === 'dark' ? 'white' : 'black' }}
                             >
-                                {text.length > 0 ? text : 'Enter something in the textbox above to preview it here'}
+                                {text.length > 0 ? text : 'Nothing to preview.'}
                             </p>
                         </blockquote>
                     </figure>
