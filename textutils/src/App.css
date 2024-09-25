@@ -1,3 +1,4 @@
+/* Default styles */
 .App {
   text-align: center;
 }
@@ -36,3 +37,24 @@
     transform: rotate(360deg);
   }
 }
+
+/* Dark mode styles */
+.dark-mode {
+  background-image: url('./bgblack.jpg');
+  background-color: #282c34;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Light mode styles */
+.light-mode {
+  background-image: url('./bgwhite.jpg');
+  background-color: white;
+  color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+

@@ -54,36 +54,36 @@ export default function TextForm(props) {
             >
             
             <div className="container" style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}>
-                    <h1 className='mb'>{props.heading}</h1>
+                    <h1 className='mb '>{props.heading}</h1>
                     <hr />
                     <div className="mb-3">
                         <textarea
                             className="form-control"
                             value={text}
                             onChange={handleOnChange}
-                            style={{ backgroundColor: props.mode === 'dark' ? '#13466e' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }}
+                            style={{ backgroundColor: props.mode === 'dark' ? '#343a40' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }}
                             id="myBox"
                             rows={4}
-                            ref={textareaRef} // Attach ref to the textarea
+                            ref={textareaRef} 
                         ></textarea>
                     </div>
 
-                    <button disabled={text.length === 0} className="btn btn-info " onClick={handleUpClicked}>
+                    <button disabled={text.length === 0} className="btn btn-outline-dark " onClick={handleUpClicked}>
                         Convert to Uppercase
                     </button>
-                    <button disabled={text.length === 0} className="btn btn-info mx-2 my-1" onClick={handleLowClicked}>
+                    <button disabled={text.length === 0} className="btn btn-outline-dark mx-2 my-1" onClick={handleLowClicked}>
                         Convert to Lowercase
                     </button>
-                    <button disabled={text.length === 0} className="btn btn-info mx-1 my-1" onClick={handleClear}>
+                    <button disabled={text.length === 0} className="btn btn-outline-danger mx-1 my-1" onClick={handleClear}>
                         Clear text
                     </button>
-                    <button disabled={text.length === 0} className="btn btn-info mx-1 my-1" onClick={handleSentenceCase}>
+                    <button disabled={text.length === 0} className="btn btn-outline-dark mx-1 my-1" onClick={handleSentenceCase}>
                         Sentence Case
                     </button>
-                    <button disabled={text.length === 0} className="btn btn-info mx-1 my-1" onClick={handleCopyText}>
+                    <button disabled={text.length === 0} className={`btn btn-outline-dark mx-1 my-1`} onClick={handleCopyText}>
                         Copy text
                     </button>
-                    <button disabled={text.length === 0} className="btn btn-info mx-1 my-1" onClick={handleExtraSpaces}>
+                    <button disabled={text.length === 0} className="btn btn-outline-dark mx-1 my-1" onClick={handleExtraSpaces}>
                         Remove extra spaces
                     </button>
                 </div>

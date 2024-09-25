@@ -3,15 +3,15 @@ import React from 'react'
 function Footer(props) {
     return (
         <>
-            <div className="container-fluid  my-5  bottom-0 ">
+            <div className="container-fluid  my-5  bottom-0  ">
                 <footer className={`bg-${props.mode} text-center`}
-                 style={{ backgroundColor: props.mode === 'dark' ? '#13466e' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }}
-                            
+                    style={{ backgroundColor: props.mode === 'dark' ? '#13466e' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }}
+
                 >
 
                     <div className="container-fluid p-4 pb-0"
-                     style={{ backgroundColor: props.mode === 'dark' ? '#13466e' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }}
-                     >
+                        style={{ backgroundColor: props.mode === 'dark' ? '#343a40' : 'white', color: props.mode === 'dark' ? 'white' : '#042743', borderBottom: "2px solid " }}
+                    >
 
                         <section className="">
                             <form action="">
@@ -28,11 +28,11 @@ function Footer(props) {
 
                                         <div className="form-outline mb-4">
                                             <input
-                                             style={{ backgroundColor: props.mode === 'dark' ? '#13466e' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }}
-                                                placeholder='xyz@gmail.com'
-                                                type="email"
-                                                id="form5Example2"
-                                                className="form-control"
+                                                style={{ backgroundColor: props.mode === 'dark' ? '#1a1e21' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }}
+                                            placeholder='xyz@gmail.com'
+                                            type="email"
+                                            id="form5Example2"
+                                            className="form-control"
                                             />
                                             <label className="form-label" htmlFor="form5Example2">
                                                 Email address
@@ -42,7 +42,7 @@ function Footer(props) {
 
                                     <div className="col-auto">
 
-                                        <button type="submit" className="btn btn-primary mb-4">
+                                        <button type="submit" className={`btn btn-outline-${props.mode} mb-4 text-white ` }>
                                             Subscribe
                                         </button>
                                     </div>
