@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    font-size: 16px;
+  }
+  .App {
+    align-items: center;
+    display: grid;
+    height: 100vh;
+    font-family: system-ui;
+    justify-content: center;
+  }
