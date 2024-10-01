@@ -26,9 +26,11 @@ export default function Quotes() {
 
   return (
     <div className="App">
+    <div className="cover">
+
       <ul className="carousel__list">
         {morelquote.map((review, index) => {
-          const { citation, name, quote } = review;
+          const { citation, name, quote,image } = review;
           const count = index + 1;
           return (
             <li
@@ -39,6 +41,7 @@ export default function Quotes() {
               `}
               key={count}
             >
+                {/* <span><img src={image} alt={name}/></span> */}
               <blockquote className="carousel__quote">
                 <cite>
                   <span className="carousel__name">{name}</span>
@@ -67,6 +70,7 @@ export default function Quotes() {
           />
         </li>
       </ul>
+    </div>
     </div>
   );
 }

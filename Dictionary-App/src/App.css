@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,7 +10,18 @@
   .App {
     align-items: center;
     display: grid;
-    height: 100vh;
+    /* height: 100vh; */
     font-family: system-ui;
     justify-content: center;
+    /* background: url(./assets/dicbg.jpeg) no-repeat ; */
   }
+  .box{
+  /* background-image: radial-gradient(360deg, rgb(21, 9, 39) 10% , #030e1bd6 30%, rgb(9, 2, 30) ); */
+/* background-image: radial-gradient(darkblue); */
+background:url(./assets/deskbg.jpeg);
+background-repeat: no-repeat;
+background-size: cover;
+object-fit: cover;
+
+  }
+
