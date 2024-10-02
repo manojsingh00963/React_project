@@ -117,9 +117,9 @@ function MyWeatherApp() {
 	};
 
 	return (
-    <div className=" container ">
+    <div className=" container mx-auto ">
 
-		<div className="App wedcard ">
+		<div className="App wedcard  ">
 			<h1 className="app-name">My Weather App</h1>
 			<div className="search-bar">
 				<input
