@@ -1,0 +1,31 @@
+.loader {
+    color: #e3e1e1;
+    display: inline-block;
+    position: relative;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+  }
+  .loader::after {
+    content: '';  
+    width: 5px;
+    height: 5px;
+    background: currentColor;
+    position: absolute;
+    bottom: 10px;
+    right: -5px;
+    box-sizing: border-box;
+    animation: animloader 1s linear infinite;
+  }
+  
+  @keyframes animloader {
+    0% {
+      box-shadow: 10px 0 rgb(162, 180, 228), 20px 0 rgba(129, 107, 107, 0);
+    }
+    50% {
+      box-shadow: 10px 0 rgba(147, 141, 172, 0.751), 20px 0 rgba(241, 203, 203, 0);
+    }
+    100% {
+      box-shadow: 10px 0 rgb(163, 161, 196), 20px 0 rgb(147, 116, 159);
+    }
+  }

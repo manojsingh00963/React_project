@@ -1,13 +1,15 @@
-import Header from './components/Header/Header'
-import './App.css'
+import React from 'react'
+import Footer from './Components/Footer'
+import Header from './Components/Header'
+import NewsApp from './NewsApp'
 
 function App() {
-  
-
   return (
-    <>
-      <Header/>
-    </>
+    <div>
+      <Header />
+      <NewsApp/>
+      <Footer />
+    </div>
   )
 }
 
