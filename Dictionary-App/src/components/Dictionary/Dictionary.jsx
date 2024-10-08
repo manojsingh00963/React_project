@@ -29,7 +29,7 @@ function Dictionary() {
 
   return (
     <div className="App">
-      <h1>My Word Dictionary</h1>
+      <h1>My Word&apos;s Dictionary</h1>
       <div className="searchBox">
         <input
         className=" text-neutral-200 pl-3"
