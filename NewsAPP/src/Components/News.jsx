@@ -19,7 +19,7 @@ function News({ newsData }) {
           />
 
           {/* Source Badge */}
-          <div className="absolute top-0 bg-[#1c1c4690] rounded-sm right-0 z-10 py-[2px] px-0 " >
+          <div className="absolute top-0 bg-[#1c1c4690] rounded-sm right-0 z-1 py-[2px] px-0 " >
             <span
               className="text-base font-semibold text-white"
               style={{
@@ -41,6 +41,11 @@ function News({ newsData }) {
               <h2 className="text-2xl font-semibold tracking-wide">{data.title}</h2>
               <p className="text-gray-400">{data.description || 'No description available.'}</p>
             </div>
+            <p className="card-text">
+            <small className="text-muted">
+              By {!data.author ? "Unknown" : data.author} on <i className='text-dark'>{new Date(data.date).toUTCString()}</i>
+            </small>
+          </p>
             <a
               href={data.url}
               target="_blank"
