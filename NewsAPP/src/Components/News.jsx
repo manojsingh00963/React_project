@@ -12,7 +12,7 @@ function News({ newsData }) {
         >
           {/* Image */}
           <img
-            src={data.urlToImage || "https://source.unsplash.com/301x301/?news"}
+            src={data.urlToImage || "https://thumbs.dreamstime.com/b/online-news-article-tablet-screen-electronic-newspaper-magazine-latest-press-media-mockup-digital-portal-151771038.jpg?w=768"}
             alt={data.title}
             onClick={() => window.open(data.url)}
             className="object-cover object-center w-full rounded-t-md h-72 bg-gray-500"
@@ -43,7 +43,7 @@ function News({ newsData }) {
             </div>
             <p className="card-text">
             <small className="text-muted">
-              By {!data.author ? "Unknown" : data.author} on <i className='text-dark'>{new Date(data.date).toUTCString()}</i>
+              By {!data.author ? "Unknown" : data.author} on <i className='text-dark'>{new Date(data.publishedAt).toUTCString()}</i>
             </small>
           </p>
             <a
