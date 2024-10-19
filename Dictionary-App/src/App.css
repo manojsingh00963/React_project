@@ -18,9 +18,13 @@
   .box{
   /* background-image: radial-gradient(360deg, rgb(21, 9, 39) 10% , #030e1bd6 30%, rgb(9, 2, 30) ); */
 /* background-image: radial-gradient(darkblue); */
-background:url(./assets/deskbg.jpeg);
+background:url(./assets/dicbg.jpeg);
 background-repeat: no-repeat;
 background-size: cover;
+background-position: center;
+width:500px;
+margin: auto;
+
 object-fit: cover;
 
   }

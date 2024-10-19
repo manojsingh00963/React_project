@@ -1,5 +1,5 @@
 .loader {
-    color: #e3e1e1;
+    color: #000000;
     display: inline-block;
     position: relative;
     font-size: 25px;
@@ -20,12 +20,12 @@
   
   @keyframes animloader {
     0% {
-      box-shadow: 10px 0 rgb(162, 180, 228), 20px 0 rgba(129, 107, 107, 0);
+      box-shadow: 10px 0 rgba(86, 126, 236, 0), 20px 0 rgba(255, 255, 255, 0);
     }
     50% {
-      box-shadow: 10px 0 rgba(147, 141, 172, 0.751), 20px 0 rgba(241, 203, 203, 0);
+      box-shadow: 10px 0 rgb(16, 10, 41), 20px 0 rgba(255, 255, 255, 0);
     }
     100% {
-      box-shadow: 10px 0 rgb(163, 161, 196), 20px 0 rgb(147, 116, 159);
+      box-shadow: 10px 0 rgb(26, 25, 43), 20px 0 rgb(30, 22, 33);
     }
   }

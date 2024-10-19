@@ -1,29 +1,45 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import PropTypes from 'prop-types';
 
 function News({ newsData }) {
-  console.log(newsData);
-
   return (
     <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {newsData.map((data, index) => (
         <div
           key={index}
-          className="max-w-xs rounded-md shadow-md bg-black text-gray-100"
+          className="relative max-w-xs rounded-md shadow-md bg-black text-gray-100"
         >
+          {/* Image */}
           <img
             src={data.urlToImage || "https://source.unsplash.com/301x301/?news"}
             alt={data.title}
-            onClick={()=>window.open(data.url)}
+            onClick={() => window.open(data.url)}
             className="object-cover object-center w-full rounded-t-md h-72 bg-gray-500"
           />
+
+          {/* Source Badge */}
+          <div className="absolute top-0 bg-[#1c1c4690] rounded-sm right-0 z-10 py-[2px] px-0 " >
+            <span
+              className="text-base font-semibold text-white"
+              style={{
+                width: "100px",  // Set a fixed width for the badge
+                display: "block",
+                textAlign: "center",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis"
+              }}
+            >
+              {data.source.name}
+            </span>
+          </div>
+
+          {/* Content */}
           <div className="flex flex-col justify-between p-6 space-y-8">
             <div className="space-y-2">
               <h2 className="text-2xl font-semibold tracking-wide">{data.title}</h2>
-              <p className="text-gray-400">
-              onClick={()=>window.open(data.url)}
-                {data.description || 'No description available.'}
-              </p>
+              <p className="text-gray-400">{data.description || 'No description available.'}</p>
             </div>
             <a
               href={data.url}
